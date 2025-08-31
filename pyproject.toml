@@ -1,0 +1,16 @@
+[project]
+name = "agents"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "alpha-vantage>=3.0.0",
+    "dotenv>=0.9.9",
+    "finnhub-python>=2.4.24",
+    "matplotlib>=3.10.6",
+    "openai-agents>=0.2.10",
+    "streamlit>=1.49.1",
+    "tavily-python>=0.7.11",
+    "yfinance>=0.2.65",
+]
