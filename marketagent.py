@@ -6,6 +6,7 @@ from tavily import TavilyClient, AsyncTavilyClient
 from datetime import datetime, timedelta, timezone
 import yfinance as yf
 import warnings
+import streamlit as st
 
 warnings.filterwarnings("ignore", category=FutureWarning)
 tracing_api_key = os.environ.get("OPENAI_API_KEY")
@@ -17,6 +18,14 @@ session = SQLiteSession("financial_chat_1", "conversation_history_1.db")
 
 gemini_api_key = os.environ.get("GEMINI_API_KEY")
 tavily_api_key = os.environ.get("TAVILY_API_KEY")
+
+def get_secret(key: str):
+    if key in st.secrets:
+        return st.secrets[key]
+    return os.getenv(key)
+
+if not gemini_api_key:
+    raise ValueError("❌ GEMINI_API_KEY not found in Streamlit secrets or environment.")
 
 external_client: AsyncOpenAI = AsyncOpenAI(
    api_key=gemini_api_key,
