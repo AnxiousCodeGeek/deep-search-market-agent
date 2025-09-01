@@ -21,8 +21,13 @@ tavily_api_key = os.environ.get("TAVILY_API_KEY")
 
 def get_secret(key: str):
     if key in st.secrets:
+        st.write(f"✅ Found secret {key} in Streamlit secrets")
         return st.secrets[key]
-    return os.getenv(key)
+    if os.getenv(key):
+        st.write(f"✅ Found secret {key} in environment")
+        return os.getenv(key)
+    st.write(f"❌ Secret {key} not found anywhere")
+    return None
 
 if not gemini_api_key:
     raise ValueError("❌ GEMINI_API_KEY not found in Streamlit secrets or environment.")
