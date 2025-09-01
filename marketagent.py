@@ -16,19 +16,25 @@ load_dotenv()
 # set_tracing_disabled(True)
 session = SQLiteSession("financial_chat_1", "conversation_history_1.db")
 
-# --- Get API keys ---
+
 def get_secret(key: str):
-    # Streamlit Cloud first
+
     if key in st.secrets:
         return st.secrets[key]
-    # Local .env / environment next
+
     if os.getenv(key):
         return os.getenv(key)
+    
     return None
 
-tracing_api_key = get_secret("OPENAI_API_KEY")
+# --- Load API keys ---
 gemini_api_key = get_secret("GEMINI_API_KEY")
 tavily_api_key = get_secret("TAVILY_API_KEY")
+tracing_api_key = get_secret("OPENAI_API_KEY")
+
+# Safety check
+if not gemini_api_key:
+    raise ValueError("❌ GEMINI_API_KEY not found in Streamlit secrets or environment.")
 
 # gemini_api_key = os.environ.get("GEMINI_API_KEY")
 # tavily_api_key = os.environ.get("TAVILY_API_KEY")
