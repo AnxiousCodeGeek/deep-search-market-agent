@@ -33,7 +33,7 @@ if st.sidebar.button("🗑️ Clear All Chats"):
 
 
 # ---------- MAIN AREA ----------
-st.title("📊 StoxFnlytics")
+st.title("📊 StoxFinlytics")
 st.subheader("Deep Search Market Agent")
 st.caption(f"Currently viewing: **{st.session_state.active_session}**")
 
