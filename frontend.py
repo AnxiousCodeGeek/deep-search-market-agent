@@ -40,7 +40,7 @@ st.markdown("""
     <h4>Deep Search Market Agent</h4>
 </div>
 """, unsafe_allow_html=True)
-st.caption(f"Currently viewing: **{st.session_state.active_session}**")
+st.caption(f"Active: **{st.session_state.active_session}**")
 
 # Display chat for active session
 for q, r in st.session_state.sessions[st.session_state.active_session]:
@@ -73,6 +73,7 @@ if user_query:
     # Show assistant response
     with st.chat_message("assistant"):
         st.write(response)
+
 
 
 
