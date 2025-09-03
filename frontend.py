@@ -38,8 +38,8 @@ st.markdown("""
     <img src='https://raw.githubusercontent.com/AnxiousCodeGeek/deep-search-market-agent/main/assets/arrow.png' 
          width='50' style='margin-right: 12px;'/>
     <div>
-        <h1 style='margin: 0;'>StoxFinlytics</h1>
-        <h4 style='margin: 0;'>Deep Search Market Agent</h4>
+        <h1 style='margin: 0; font-size: 2em;'>StoxFinlytics</h1>
+        <h4 style='margin: 2px 0 0 0; font-weight: normal; color: gray;'>Deep Search Market Agent</h4>
     </div>
 </div>
 """, unsafe_allow_html=True)
@@ -76,6 +76,7 @@ if user_query:
     # Show assistant response
     with st.chat_message("assistant"):
         st.write(response)
+
 
 
 
