@@ -33,8 +33,13 @@ if st.sidebar.button("🗑️ Clear All Chats"):
 
 
 # ---------- MAIN AREA ----------
-st.title("📊 StoxFinlytics")
-st.subheader("Deep Search Market Agent")
+st.markdown("""
+<div style='text-align: center;'>
+    <img src='https://raw.githubusercontent.com/AnxiousCodeGeek/deep-search-market-agent/main/assets/logo.png' width='120'/>
+    <h1>StoxFinlytics</h1>
+    <h4>Deep Search Market Agent</h4>
+</div>
+""", unsafe_allow_html=True)
 st.caption(f"Currently viewing: **{st.session_state.active_session}**")
 
 # Display chat for active session
