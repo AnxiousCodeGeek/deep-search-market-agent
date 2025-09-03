@@ -14,7 +14,8 @@ set_tracing_export_api_key(tracing_api_key)
 
 load_dotenv()
 # set_tracing_disabled(True)
-session = SQLiteSession("financial_chat_1", "conversation_history_1.db")
+db_path = os.path.join("/tmp", "conversation_history_1.db")
+session = SQLiteSession("financial_chat_1", db_path)
 
 
 def get_secret(key: str):
@@ -379,6 +380,7 @@ async def main():
 
 if __name__ == "__main__":
    asyncio.run(main())
+
 
 
 
