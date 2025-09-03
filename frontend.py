@@ -33,7 +33,8 @@ if st.sidebar.button("🗑️ Clear All Chats"):
 
 
 # ---------- MAIN AREA ----------
-st.title("📊 Deep Search Market Agent")
+st.title("📊 StoxFnlytics")
+st.subheader("Deep Search Market Agent")
 st.caption(f"Currently viewing: **{st.session_state.active_session}**")
 
 # Display chat for active session
