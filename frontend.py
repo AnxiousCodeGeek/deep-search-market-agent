@@ -13,7 +13,7 @@ if "active_session" not in st.session_state:
 
 
 # ---------- SIDEBAR ----------
-st.sidebar.title("Conversations")
+st.sidebar.title("History")
 
 # New Chat button
 if st.sidebar.button("➕ New Chat"):
@@ -73,6 +73,7 @@ if user_query:
     # Show assistant response
     with st.chat_message("assistant"):
         st.write(response)
+
 
 
 
