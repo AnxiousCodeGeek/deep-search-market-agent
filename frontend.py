@@ -35,7 +35,9 @@ if st.sidebar.button("🗑️ Clear All Chats"):
 # ---------- MAIN AREA ----------
 st.markdown("""
 <div style='text-align: center;'>
-    <img src='https://raw.githubusercontent.com/AnxiousCodeGeek/deep-search-market-agent/main/assets/arrow.png' width='60'/>
+    <img src='https://raw.githubusercontent.com/AnxiousCodeGeek/deep-search-market-agent/main/assets/arrow.png' 
+         width='60' 
+         style='display: block; margin-left: auto; margin-right: auto;'/>
     <h1>StoxFinlytics</h1>
     <h4>Deep Search Market Agent</h4>
 </div>
@@ -73,5 +75,6 @@ if user_query:
     # Show assistant response
     with st.chat_message("assistant"):
         st.write(response)
+
 
 
